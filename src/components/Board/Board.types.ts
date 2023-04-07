@@ -8,4 +8,5 @@ import { Cell } from "../../types";
  */
 export interface BoardProps {
   board: Cell[][];
+  isWinner: boolean;
 }

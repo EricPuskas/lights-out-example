@@ -8,6 +8,9 @@ import { styled } from "@mui/system";
  */
 export const Container = styled("div")(() => {
   return {
-    marginTop: 50
+    marginTop: 10,
+    display: "flex",
+    flexDirection: "column",
+    gap: 5
   };
 });

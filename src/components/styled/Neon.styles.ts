@@ -18,7 +18,7 @@ export interface NeonTextProps {
 /**
  * Styles the Neon text
  */
-export const NeonText = styled("p", {
+export const NeonText = styled("div", {
   shouldForwardProp: (propName) => propName !== "color"
 })<NeonTextProps>((props) => {
   const { color } = props;
@@ -30,6 +30,8 @@ export const NeonText = styled("p", {
     switch (color) {
       case "blue":
         return "#426dfb";
+      case "green":
+        return "#4caf50";
       case "orange":
         return "#fb4264";
       default:
@@ -44,6 +46,8 @@ export const NeonText = styled("p", {
     switch (color) {
       case "blue":
         return "#2356ff";
+      case "green":
+        return "#2e7d32";
       case "orange":
         return "#f40a35";
       default:
@@ -67,6 +71,19 @@ export const NeonText = styled("p", {
             textShadow:
               "0 0 0.25vw #082180, 0 0 0.75vw #082180, 0 0 2.5vw #082180, 0 0 2.5vw #082180, 0 0 0.1vw #082180, 0.25vw 0.25vw 0.05vw #0a3940",
             color: "#146c80"
+          }
+        };
+      case "green":
+        return {
+          "0%, 100%": {
+            textShadow:
+              "0 0 0.5vw #0f9d58, 0 0 1.5vw #0f9d58, 0 0 5vw #0f9d58, 0 0 5vw #0f9d58, 0 0 0.2vw #a7ffeb, 0.25vw 0.25vw 0.05vw #0f4d29",
+            color: "#a7ffeb"
+          },
+          "50%": {
+            textShadow:
+              "0 0 0.25vw #082e14, 0 0 0.75vw #082e14, 0 0 2.5vw #082e14, 0 0 2.5vw #082e14, 0 0 0.1vw #082e14, 0.25vw 0.25vw 0.05vw #041710",
+            color: "#0f4d29"
           }
         };
       case "orange":

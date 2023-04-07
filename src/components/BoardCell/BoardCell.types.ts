@@ -9,3 +9,12 @@ import { Cell } from "../../types";
 export interface BoardCellProps {
   cell: Cell;
 }
+
+/**
+ * Defines the container props interface
+ */
+export interface ContainerProps {
+  active: boolean;
+  gridSize: number;
+  isHint: boolean;
+}

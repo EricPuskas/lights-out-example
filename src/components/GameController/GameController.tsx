@@ -3,11 +3,19 @@
  */
 import { Title } from "../Title";
 import { Board } from "../Board";
+import { GameTimer } from "../GameTimer";
+import { GameReset } from "../GameReset";
+import { GameMessage } from "../GameMessage";
+import { GameHistory } from "../GameHistory";
+import { GameRanking } from "../GameRanking";
+import { GameHelper } from "../GameHelper";
+import { GameMovesCounter } from "../GameMovesCounter";
+import { GridSizeSelector } from "../GridSizeSelector";
 
 /**
  * Imports styled components
  */
-import { Container } from "./GameController.styles";
+import { Container, GameOptions } from "./GameController.styles";
 
 /**
  * Imports hooks
@@ -21,12 +29,22 @@ export const GameController: React.FC = () => {
   /**
    * Gets the game state
    */
-  const { board } = useGame();
+  const { isWinner, board } = useGame();
 
   return (
     <Container>
       <Title />
-      <Board board={board} />
+      <GameReset />
+      <GridSizeSelector />
+      <GameMessage />
+      <Board board={board} isWinner={isWinner} />
+      <GameMovesCounter />
+      <GameTimer />
+      <GameOptions>
+        <GameHistory />
+        <GameRanking />
+        <GameHelper />
+      </GameOptions>
     </Container>
   );
 };
